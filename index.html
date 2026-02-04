@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover your hidden personality through your moon sign. Get a personalized astrology reading that reveals your true emotional nature, desires, and destiny. Free analysis included.">
+    <meta name="keywords" content="moon sign calculator, astrology reading, zodiac personality, moon sign meaning, personalized horoscope, natal chart, lunar astrology">
+    <meta name="author" content="Astrology Reading">
+    <meta property="og:title" content="Reveal Your Hidden Personality - Discover Your Moon Sign Today">
+    <meta property="og:description" content="Your moon sign holds the key to understanding your deepest self. Get a personalized reading that explains your true nature, desires, and cosmic destiny.">
+    <meta property="og:type" content="website">
+    
+    <!-- Title for Search Engines -->
+    <title>Your Moon Sign Reading | Discover Your Hidden Personality & Cosmic Destiny</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========== GLOBAL STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8fafc;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1a1f3a;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* CTA Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.5);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        /* ========== HEADER / NAVIGATION ========== */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subheadline {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+        }
+
+        .trust-badge {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ========== BENEFITS SECTION ========== */
+        .benefits {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: white;
+            border: 2px solid #f0f0f0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: #667eea;
+        }
+
+        /* ========== HOW IT WORKS SECTION ========== */
+        .how-it-works {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotateZ(5deg);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .step h3 {
+            margin-bottom: 15px;
+        }
+
+        /* ========== TESTIMONIALS SECTION ========== */
+        .testimonials {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            padding-left: 25px;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #555;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .urgency-text {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #1a1a2e;
+            color: #ccc;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .subheadline {
+                font-size: 1.1rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .benefits-grid,
+            .steps-container,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badge {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .badge-item {
+                width: 100%;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.95rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            section {
+                padding: 50px 15px !important;
+            }
+        }
+
+        /* ========== UTILITY CLASSES ========== */
+        .section-title-accent {
+            color: #667eea;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-50 {
+            margin-top: 50px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    🌙 Cosmic Reading
+                </div>
+                <nav>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Main Headline - SEO H1 -->
+                <h1>Discover Your Hidden Personality Through Your Moon Sign</h1>
+                
+                <!-- Subheadline - Emotional Hook -->
+                <p class="subheadline">Most people only know their sun sign. Your moon sign reveals your true emotional nature, deepest desires, and cosmic destiny. Get your personalized reading now.</p>
+                
+                <!-- Trust Badges -->
+                <div class="trust-badge">
+                    <div class="badge-item"><i class="fas fa-star"></i> 50K+ Satisfied Readers</div>
+                    <div class="badge-item"><i class="fas fa-lock"></i> 100% Private & Secure</div>
+                    <div class="badge-item"><i class="fas fa-sparkles"></i> Personalized AI Analysis</div>
+                </div>
+
+                <!-- Primary CTA Button -->
+                <a href="https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net" class="btn btn-primary btn-block">
+                    Reveal Your Moon Sign Now
+                </a>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9;"><i class="fas fa-clock"></i> Takes only 60 seconds | Instant results | No credit card required</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS SECTION ========== -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>What Will You Discover About Yourself?</h2>
+            
+            <div class="benefits-grid">
+                <!-- Benefit Card 1 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-head-side-virus"></i></div>
+                    <h3>Your Emotional Truth</h3>
+                    <p>Understand your deepest emotions, what truly drives you, and why you react the way you do. Your moon sign is the key to emotional self-awareness.</p>
+                </div>
+
+                <!-- Benefit Card 2 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-heart"></i></div>
+                    <h3>Love & Relationship Insights</h3>
+                    <p>Learn what you need in relationships, your romantic style, and how to attract the right partner. Discover your relationship patterns and desires.</p>
+                </div>
+
+                <!-- Benefit Card 3 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-bullseye"></i></div>
+                    <h3>Life Purpose & Direction</h3>
+                    <p>Align with your true purpose. Your moon sign guides your subconscious motivations, helping you make better life decisions and find fulfillment.</p>
+                </div>
+
+                <!-- Benefit Card 4 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Hidden Personality Traits</h3>
+                    <p>Uncover 7+ hidden traits that make you unique. Your moon sign reveals sides of your personality you may never have considered before.</p>
+                </div>
+
+                <!-- Benefit Card 5 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-rocket"></i></div>
+                    <h3>Personal Growth Roadmap</h3>
+                    <p>Receive actionable insights to overcome challenges and embrace your true nature. A personalized guide to becoming your best self.</p>
+                </div>
+
+                <!-- Benefit Card 6 -->
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fas fa-gem"></i></div>
+                    <h3>Cosmic Compatibility</h3>
+                    <p>See how your moon sign meshes with others. Understand your compatibility with friends, family, and potential partners on a deeper level.</p>
+                </div>
+            </div>
+
+            <!-- Secondary CTA -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net" class="btn btn-secondary">
+                    Get Your Personalized Moon Sign Reading Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS SECTION ========== -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>It's Simple & Fast - Just 3 Steps</h2>
+            
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Your Birth Info</h3>
+                    <p>Provide your birth date, time, and location. Our system needs these details to calculate your precise moon sign and natal chart.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Instant Analysis</h3>
+                    <p>Our AI-powered astrology engine analyzes your birth chart and creates a personalized reading tailored just for you—in seconds.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Unlock Your Destiny</h3>
+                    <p>Receive a comprehensive report with your moon sign meaning, compatibility insights, and personalized guidance for your life path.</p>
+                </div>
+            </div>
+
+            <!-- CTA for How It Works section -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net" class="btn btn-primary">
+                    Start Your Reading in 60 Seconds
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS / SOCIAL PROOF ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>See What Others Are Saying</h2>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"I never understood why I was so emotional until I learned about my Pisces moon. This reading completely changed how I see myself. Finally, everything makes sense!"</p>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Verified Reader</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Eerily accurate. The insights about my relationship patterns and what I need in a partner were spot-on. I've already recommended this to all my friends."</p>
+                    <div class="testimonial-author">Michael T.</div>
+                    <div class="testimonial-role">Verified Reader</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"As a therapist, I was skeptical, but this moon sign analysis gave me profound insights into my own psychology. I'm now recommending it to my clients!"</p>
+                    <div class="testimonial-author">Dr. Amanda L.</div>
+                    <div class="testimonial-role">Verified Reader</div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">"Best $27 I've spent. The detailed breakdown of my emotional nature, career path, and love compatibility was incredibly helpful. Worth every penny!"</p>
+                    <div class="testimonial-author">Jessica R.</div>
+                    <div class="testimonial-role">Verified Reader</div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div style="text-align: center; margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+                <h3><i class="fas fa-star"></i> Join 50,000+ People Who've Discovered Their True Self</h3>
+                <p style="font-size: 1.1rem; color: #667eea; font-weight: 600;">98% satisfaction rate • 4.9/5 average rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION ========== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>What's the difference between my sun sign and moon sign?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your sun sign (zodiac sign) represents your core identity and how you appear to the world. Your moon sign represents your emotional inner world, private self, and subconscious needs. While your sun sign is your ego, your moon sign is your soul. Most people only know their sun sign, but your moon sign is equally important for understanding yourself.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need my exact birth time?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, your birth time is crucial for accurate moon sign calculation. Your moon sign changes approximately every 2-3 days, but your exact position depends on the time of day you were born. If you don't know your exact birth time, check your birth certificate or contact the hospital where you were born. Most records are available for a small fee.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this reading guaranteed to be accurate?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our personalized readings are based on the most accurate astrological calculations available, combined with AI analysis. While astrology is an ancient practice with millions of believers, we recommend using your reading as a tool for self-reflection and personal growth. Your reading provides genuine insights into your personality and potential—the interpretation and application are up to you.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What will I receive in my reading?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your personalized report includes: your precise moon sign and its meaning, detailed personality insights (7+ hidden traits), love and compatibility analysis, career and life purpose guidance, relationship patterns, and a personalized action plan. You'll also get bonus compatibility readings and extended interpretations for deeper self-understanding.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my information private and secure?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>100% yes. Your birth information and personal data are encrypted and never shared with third parties. We use industry-standard SSL encryption and secure servers to protect your information. Your privacy is our top priority, and you'll receive your reading instantly after submission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FINAL CTA SECTION ========== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Stop Wondering Who You Really Are</h2>
+            <p class="cta-description">Your moon sign holds the answers you've been searching for. Understand your emotional nature, find your true path, and embrace your authentic self. Your cosmic destiny awaits.</p>
+            
+            <!-- Urgency Element -->
+            <div class="urgency-text">
+                <i class="fas fa-bolt"></i> LIMITED TIME: Complete readings under $30 | Instant access to all insights
+            </div>
+
+            <!-- Final Primary CTA -->
+            <a href="https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net" class="btn btn-secondary btn-block">
+                Discover Your Hidden Personality Now
+            </a>
+
+            <p style="margin-top: 25px; font-size: 0.95rem;"><i class="fas fa-check"></i> 60-second setup | <i class="fas fa-check"></i> Instant results | <i class="fas fa-check"></i> 100% secure | <i class="fas fa-check"></i> No credit card needed to start</p>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cosmic Reading. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">This website contains affiliate links. We may earn a commission if you make a purchase through our links. This does not affect the price you pay.</p>
+            
+            <div class="footer-links">
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#disclaimer">Disclaimer</a>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">For entertainment purposes. Results are based on astrological calculations and personal interpretation.</p>
+        </div>
+    </footer>
+
+    <!-- ========== INTERACTIVE FAQ FUNCTIONALITY ========== -->
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track CTA button clicks for analytics (optional)
+        document.querySelectorAll('a[href*="hop.clickbank.net"]').forEach(button => {
+            button.addEventListener('click', function() {
+                // You can add analytics tracking here
+                console.log('CTA button clicked');
+            });
+        });
+    </script>
+
+</body>
+</html>

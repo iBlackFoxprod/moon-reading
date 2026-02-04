@@ -1,0 +1,94 @@
+/* Hero Component Styles */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+}
+
+/* Background Animation Elements */
+.bgElement {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.bgElementTop {
+  width: 400px;
+  height: 400px;
+  top: -50%;
+  right: -10%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.bgElementBottom {
+  width: 300px;
+  height: 300px;
+  bottom: -30%;
+  left: -5%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Trust Badges */
+.trustBadges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trustBadges {
+    gap: 10px;
+  }
+
+  .badge {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}

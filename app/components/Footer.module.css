@@ -1,0 +1,34 @@
+/* Footer Component Styles */
+
+.footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer h5,
+.footer h6 {
+  color: white;
+}
+
+.footer a {
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+.footer a:hover {
+  opacity: 1;
+  color: #667eea;
+}
+
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 50px;
+  }
+}

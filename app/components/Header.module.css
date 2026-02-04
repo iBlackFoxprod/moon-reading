@@ -1,0 +1,42 @@
+/* Header Component Styles */
+
+.header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.header .navbar-brand {
+  color: white !important;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.header .navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.header .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.header .nav-link:hover,
+.header .nav-link.active {
+  color: white !important;
+  opacity: 1;
+}
+
+.header .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .header .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+}
