@@ -62,8 +62,8 @@ export default function Benefits() {
                 <div className="mb-4 text-accent fs-1">
                   <i className={`fas ${benefit.icon}`}></i>
                 </div>
-                <h3 className="h5 fw-800 mb-3">{benefit.title}</h3>
-                <p className="text-dim small mb-0">{benefit.description}</p>
+                <h3 className="h5 fw-800 mb-3 text-white">{benefit.title}</h3>
+                <p className="text-dim small mb-0 readability-shadow">{benefit.description}</p>
               </div>
             </div>
           ))}

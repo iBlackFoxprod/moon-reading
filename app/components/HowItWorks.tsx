@@ -47,8 +47,8 @@ export default function HowItWorks() {
                 >
                   {step.number}
                 </div>
-                <h3 className="h4 fw-800 mb-3">{step.title}</h3>
-                <p className="text-dim mb-0 small">{step.description}</p>
+                <h3 className="h4 fw-800 mb-3 text-white">{step.title}</h3>
+                <p className="text-white mb-0 small readability-shadow">{step.description}</p>
               </div>
             </div>
           ))}

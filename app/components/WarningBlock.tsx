@@ -25,7 +25,7 @@ export default function WarningBlock() {
                             />
                         </div>
                         <div className="col-md-8">
-                            <h3 className="h2 fw-800 text-accent mb-3">Wait! Don&apos;t Leave Just Yet...</h3>
+                            <h3 className="h2 fw-800 text-white mb-3 readability-shadow">Wait! Don&apos;t Leave Just Yet...</h3>
                             <p className="text-dim fs-5 mb-4 readability-shadow">
                                 The current lunar cycle is entering a critical phase. Leaving now means you could miss
                                 the specific celestial window for your personalized reading. Most insights are only accurate

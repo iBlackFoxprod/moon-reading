@@ -51,12 +51,12 @@ export default function FAQ() {
                 onClick={() => toggleFAQ(index)}
                 style={{ color: 'inherit' }}
               >
-                <span className="fw-800">{faq.question}</span>
+                <span className="fw-800 text-white">{faq.question}</span>
                 <i className={`fas ${activeIndex === index ? 'fa-minus' : 'fa-plus'} text-primary`}></i>
               </button>
               {activeIndex === index && (
                 <div className="px-4 pb-4 animate-fade-in-up">
-                  <p className="text-dim mb-0 small">{faq.answer}</p>
+                  <p className="text-white mb-0 small readability-shadow">{faq.answer}</p>
                 </div>
               )}
             </div>

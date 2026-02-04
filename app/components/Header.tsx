@@ -31,7 +31,7 @@ export default function Header() {
             <ul className="navbar-nav ms-auto gap-lg-4">
               {['Benefits', 'Testimonials', 'FAQ'].map((item) => (
                 <li key={item} className="nav-item">
-                  <a className="nav-link fw-600 uppercase small tracking-widest hover-accent" href={`#${item.toLowerCase()}`}>
+                  <a className="nav-link fw-600 uppercase small tracking-widest hover-accent text-white readability-shadow" href={`#${item.toLowerCase()}`}>
                     {item}
                   </a>
                 </li>

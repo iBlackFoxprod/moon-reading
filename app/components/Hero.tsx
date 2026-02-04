@@ -35,8 +35,8 @@ export default function Hero() {
             </p>
 
             <div className="glass-card p-4 p-md-5 mb-4 text-center">
-              <h3 className="h4 mb-4">Discover Your Hidden Personality</h3>
-              <p className="text-dim mb-4 readability-shadow">Find out what your lunar alignment reveals about your true nature and future path.</p>
+              <h3 className="h4 mb-4 text-white">Discover Your Hidden Personality</h3>
+              <p className="text-white mb-4 readability-shadow">Find out what your lunar alignment reveals about your true nature and future path.</p>
 
               <button
                 onClick={handleReveal}
@@ -51,15 +51,15 @@ export default function Hero() {
                 ) : 'Get My Free Reading Now'}
               </button>
 
-              <p className="mt-4 small text-dim">
+              <p className="mt-4 small text-white opacity-75">
                 <i className="fas fa-lock me-2 text-primary"></i>
                 100% Free & Secure Personal Analysis
               </p>
             </div>
 
-            <div className="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start opacity-75">
-              <div className="small"><i className="fas fa-check-circle text-primary me-2"></i>50k+ Readings Today</div>
-              <div className="small"><i className="fas fa-star text-accent me-2"></i>4.9/5 Rating</div>
+            <div className="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start">
+              <div className="small text-white readability-shadow"><i className="fas fa-check-circle text-primary me-2"></i>50k+ Readings Today</div>
+              <div className="small text-white readability-shadow"><i className="fas fa-star text-accent me-2"></i>4.9/5 Rating</div>
             </div>
           </div>
 

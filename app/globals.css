@@ -166,6 +166,10 @@ h1, h2, h3, .serif {
   text-shadow: 0 0 20px rgba(157, 141, 241, 0.5);
 }
 
+.text-dim {
+  color: var(--text-dim) !important;
+}
+
 .readability-shadow {
   text-shadow: var(--text-shadow);
 }

@@ -50,7 +50,7 @@ export default function Testimonials() {
             <div key={index} className="col-12 col-md-6">
               <div className="glass-card p-4 h-100">
                 <div className="mb-3">{renderStars(testimonial.rating)}</div>
-                <p className="text-dim italic mb-4">&quot;{testimonial.text}&quot;</p>
+                <p className="text-white italic mb-4 readability-shadow">&quot;{testimonial.text}&quot;</p>
                 <div>
                   <p className="fw-800 mb-0">{testimonial.author}</p>
                   <p className="small text-primary mb-0">{testimonial.role}</p>
@@ -64,7 +64,7 @@ export default function Testimonials() {
           <h3 className="h4 mb-3 text-gradient glow">
             Join 50,000+ Seekers
           </h3>
-          <p className="fs-5 mb-0 text-dim">
+          <p className="fs-5 mb-0 text-white readability-shadow">
             <span className="text-accent">98.4%</span> Accuracy Rate as Rated by our Monthly Readers
           </p>
         </div>
