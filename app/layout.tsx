@@ -2,15 +2,19 @@
  * Configures global styles, metadata, and providers
  */
 
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Discover Your Personalized Moon Reading – Reveal Your Hidden Traits',
   description: 'Find your moon sign personality, uncover hidden traits, and get a personalized astrology reading. Start your journey now!',
   keywords: 'moon sign calculator, astrology reading, zodiac personality, moon sign meaning, personalized horoscope, natal chart, lunar astrology',
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   authors: [{ name: 'Cosmic Reading' }],
   openGraph: {
