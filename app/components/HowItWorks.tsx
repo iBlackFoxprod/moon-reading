@@ -1,12 +1,10 @@
 /** HowItWorks Component
- * 3-step process showing how the moon reading works
- * SEO: Uses H2 for section and H3 for each step
+ * 3-step process for lunar alignment
  */
 
 'use client';
 
 import Link from 'next/link';
-import styles from './HowItWorks.module.css';
 
 export default function HowItWorks() {
   const affiliateLink = 'https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net';
@@ -14,81 +12,58 @@ export default function HowItWorks() {
   const steps = [
     {
       number: '1',
-      title: 'Enter Your Birth Info',
+      title: 'Enter Birth Info',
       description:
-        'Provide your birth date, time, and location. Our system needs these details to calculate your precise moon sign and natal chart.',
+        'Provide your birth date and time. Our system needs these details to calculate your precise moon sign.',
     },
     {
       number: '2',
-      title: 'Get Instant Analysis',
+      title: 'Get Analysis',
       description:
-        'Our AI-powered astrology engine analyzes your birth chart and creates a personalized reading tailored just for you—in seconds.',
+        'Our astrology engine analyzes your birth chart and creates a personalized reading in seconds.',
     },
     {
       number: '3',
-      title: 'Unlock Your Destiny',
+      title: 'Unlock Fate',
       description:
-        'Receive a comprehensive report with your moon sign meaning, compatibility insights, and personalized guidance for your life path.',
+        'Receive a comprehensive report with your moon sign meaning and personalized guidance.',
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-5" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)' }}>
-      <div className="container">
-        {/* Section Header */}
-        <h2 className="text-center mb-5 fw-bold text-dark">
-          It's Simple & Fast - Just 3 Steps
+    <section id="how-it-works" className="py-5 position-relative">
+      <div className="container py-5">
+        <h2 className="text-center mb-5 display-4 fw-800 text-gradient glow">
+          Three Steps to Clarity
         </h2>
 
-        {/* Steps Grid */}
         <div className="row g-4 mb-5">
           {steps.map((step, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-4">
-              <div className={styles.stepContainer}>
-                {/* Step Number Circle */}
-                <div className={`${styles.stepNumber} mb-4 mx-auto`}>
+            <div key={index} className="col-12 col-md-4">
+              <div className="glass-card p-5 h-100 text-center">
+                <div
+                  className="mx-auto mb-4 d-flex align-items-center justify-content-center fw-800 fs-3"
+                  style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))', border: '5px solid rgba(255,255,255,0.1)' }}
+                >
                   {step.number}
                 </div>
-
-                {/* Step Title - H3 for SEO */}
-                <h3 className="fs-5 fw-bold mb-3 text-center text-dark">
-                  {step.title}
-                </h3>
-
-                {/* Step Description */}
-                <p className="text-muted text-center small">
-                  {step.description}
-                </p>
+                <h3 className="h4 fw-800 mb-3">{step.title}</h3>
+                <p className="text-dim mb-0 small">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
+        <div className="text-center mt-5">
           <Link
             href={affiliateLink}
-            className="btn btn-lg fw-bold px-5 py-3 rounded-pill"
-            style={{
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              color: 'white',
-              border: 'none',
-              boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 10px 30px rgba(102, 126, 234, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.3)';
-            }}
+            className="btn-cosmic text-decoration-none d-inline-block"
           >
-            Start Your Reading in 60 Seconds
+            Start My Journey
           </Link>
         </div>
       </div>
     </section>
   );
 }
+

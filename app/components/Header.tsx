@@ -1,59 +1,41 @@
 /** Header/Navigation Component
- * Sticky header with navigation links
+ * Glassmorphic sticky header
  */
 
 'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from './Header.module.css';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className={`${styles.header} sticky-top`}>
-      <nav className="navbar navbar-expand-lg navbar-dark w-100">
+    <header className="sticky-top" style={{ backdropFilter: 'blur(10px)', background: 'rgba(5, 5, 16, 0.7)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+      <nav className="navbar navbar-expand-lg navbar-dark py-3">
         <div className="container">
-          {/* Logo */}
-          <Link href="/" className="navbar-brand fw-bold fs-5">
-            <i className="fas fa-moon me-2"></i>
-            Cosmic Reading
+          <Link href="/" className="navbar-brand fw-800 fs-4 glow">
+            <i className="fas fa-moon text-primary me-2"></i>
+            COSMIC<span className="text-primary">READING</span>
           </Link>
 
-          {/* Toggle Button */}
           <button
             className="navbar-toggler border-0"
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-white`}></i>
           </button>
 
-          {/* Navigation Links */}
           <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link active" href="#benefits">
-                  Benefits
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#how-it-works">
-                  How It Works
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#testimonials">
-                  Testimonials
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#faq">
-                  FAQ
-                </a>
-              </li>
+            <ul className="navbar-nav ms-auto gap-lg-4">
+              {['Benefits', 'Testimonials', 'FAQ'].map((item) => (
+                <li key={item} className="nav-item">
+                  <a className="nav-link fw-600 uppercase small tracking-widest hover-accent" href={`#${item.toLowerCase()}`}>
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -61,3 +43,4 @@ export default function Header() {
     </header>
   );
 }
+

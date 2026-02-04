@@ -1,5 +1,5 @@
 /** Final CTA Component
- * High-urgency call-to-action section with scarcity messaging
+ * High-urgency section with cosmic theme
  */
 
 'use client';
@@ -10,60 +10,49 @@ import styles from './FinalCTA.module.css';
 export default function FinalCTA() {
   const affiliateLink = 'https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net';
 
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Free Moon Reading 2026',
+        text: 'I just discovered my moon sign! It reveals so much about my hidden traits. Check yours here:',
+        url: window.location.href,
+      });
+    } else {
+      alert('Copy this link to share: ' + window.location.href);
+    }
+  };
+
   return (
-    <section className={`${styles.ctaSection} gradient-secondary text-white py-5`}>
-      <div className="container text-center">
-        {/* Main Headline */}
-        <h2 className="display-4 fw-bold mb-4">
-          Stop Wondering Who You Really Are
+    <section className="py-5 bg-dark">
+      <div className="container py-5 text-center">
+        <h2 className="display-3 fw-800 text-gradient glow mb-4">
+          Stop Wondering. <span className="text-accent">Start Knowing.</span>
         </h2>
 
-        {/* Description */}
-        <p className="fs-5 mb-4 mx-auto" style={{ maxWidth: '600px', opacity: 0.95 }}>
-          Your moon sign holds the answers you've been searching for. Understand your emotional
-          nature, find your true path, and embrace your authentic self. Your cosmic destiny awaits.
+        <p className="fs-5 text-dim mb-5 mx-auto" style={{ maxWidth: '700px' }}>
+          The stars have alignment for you. Don't let another lunar cycle pass without understanding your true emotional blueprint.
         </p>
 
-        {/* Urgency Message */}
-        <div className={styles.urgencyText}>
-          <i className="fas fa-bolt me-2"></i>
-          LIMITED TIME: Complete readings under $30 | Instant access to all insights
-        </div>
-
-        {/* Primary CTA Button */}
-        <div className="mb-4">
+        <div className="mb-5">
           <Link
             href={affiliateLink}
-            className={`btn btn-light btn-lg fw-bold px-5 py-3 rounded-pill ${styles.mainButton}`}
-            style={{
-              transition: 'all 0.3s ease',
-              display: 'inline-block',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 10px 30px rgba(255, 255, 255, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-            }}
+            className="btn-cosmic text-decoration-none d-inline-block"
           >
-            Discover Your Hidden Personality Now
+            Get My Free Reading Now
           </Link>
         </div>
 
-        {/* Trust Indicators */}
-        <p className="small opacity-85">
-          <i className="fas fa-check me-2"></i>
-          60-second setup |
-          <i className="fas fa-check ms-2 me-2"></i>
-          Instant results |
-          <i className="fas fa-check ms-2 me-2"></i>
-          100% secure |
-          <i className="fas fa-check ms-2 me-2"></i>
-          No credit card needed to start
-        </p>
+        <div className="glass-card d-inline-block p-4">
+          <p className="mb-3 small fw-800 uppercase tracking-widest text-primary">Help a friend discover their destiny</p>
+          <button
+            onClick={handleShare}
+            className="btn btn-outline-light rounded-pill px-4 py-2 border-primary text-primary"
+          >
+            <i className="fas fa-share-alt me-2"></i> Share the Cosmic Wisdom
+          </button>
+        </div>
       </div>
     </section>
   );
 }
+

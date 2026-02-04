@@ -1,91 +1,57 @@
 /** Footer Component
- * Footer with compliance disclaimers and links
+ * Premium footer with compliance and celestial theme
  */
 
 'use client';
-
-import styles from './Footer.module.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      <div className="container py-5">
-        <div className="row mb-4">
-          {/* Brand */}
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <h5 className="fw-bold mb-3">
-              <i className="fas fa-moon me-2"></i>
-              Cosmic Reading
-            </h5>
-            <p className="small opacity-75">
-              Discover your true self through personalized moon sign readings powered by AI and ancient astrology.
+    <footer className="py-5" style={{ background: '#030308', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+      <div className="container">
+        <div className="row mb-5 text-center text-md-start">
+          <div className="col-lg-4 mb-4 mb-lg-0">
+            <h5 className="fw-800 text-gradient glow mb-4">COSMIC READING</h5>
+            <p className="text-dim small pe-lg-5">
+              Harnessing the power of lunar alignment to reveal your true emotional blueprint. Join the thousands who have already found clarity.
             </p>
           </div>
-
-          {/* Quick Links */}
-          <div className="col-12 col-md-4 mb-4 mb-md-0">
-            <h6 className="fw-bold mb-3">Quick Links</h6>
-            <ul className="list-unstyled small">
-              <li className="mb-2">
-                <a href="#benefits" className="text-decoration-none opacity-75">
-                  Benefits
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#how-it-works" className="text-decoration-none opacity-75">
-                  How It Works
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-decoration-none opacity-75">
-                  FAQ
-                </a>
-              </li>
+          <div className="col-6 col-lg-2 offset-lg-2 mb-4">
+            <h6 className="fw-800 uppercase small tracking-widest text-primary mb-4">Company</h6>
+            <ul className="list-unstyled small text-dim">
+              <li className="mb-2"><a href="#" className="text-reset text-decoration-none">Privacy Policy</a></li>
+              <li className="mb-2"><a href="#" className="text-reset text-decoration-none">Terms of Service</a></li>
             </ul>
           </div>
-
-          {/* Legal */}
-          <div className="col-12 col-md-4">
-            <h6 className="fw-bold mb-3">Legal</h6>
-            <ul className="list-unstyled small">
-              <li className="mb-2">
-                <a href="#" className="text-decoration-none opacity-75">
-                  Privacy Policy
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className="text-decoration-none opacity-75">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-decoration-none opacity-75">
-                  Contact
-                </a>
-              </li>
+          <div className="col-6 col-lg-2">
+            <h6 className="fw-800 uppercase small tracking-widest text-primary mb-4">Connect</h6>
+            <ul className="list-unstyled small text-dim">
+              <li className="mb-2"><a href="#" className="text-reset text-decoration-none">Support</a></li>
+              <li className="mb-2"><a href="#" className="text-reset text-decoration-none">Facebook</a></li>
             </ul>
           </div>
         </div>
 
-        <hr className="opacity-25 my-4" />
+        <div className="glass-card p-4 mt-5 text-center" style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)' }}>
+          <div className="small text-dim mx-auto" style={{ maxWidth: '800px' }}>
+            <p className="mb-3">
+              <strong>Advertorial:</strong> This website is an advertorial and not a news publication. It is intended for advertisement purposes.
+            </p>
+            <p className="mb-3 opacity-50">
+              <strong>Affiliate Statement:</strong> We are a professional review site that receives compensation from the companies whose products we review. We test each product thoroughly and give high marks to only the very best.
+            </p>
+            <p className="mb-0 opacity-50">
+              Disclaimer: For entertainment purposes only. Results vary based on individual focus.
+            </p>
+          </div>
+        </div>
 
-        {/* Copyright & Disclaimers */}
-        <div className="text-center small opacity-75">
-          <p className="mb-2">
-            &copy; {currentYear} Cosmic Reading. All rights reserved.
-          </p>
-          <p className="mb-2 opacity-50">
-            <strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may earn a
-            commission if you make a purchase through our links. This does not affect the price you pay.
-          </p>
-          <p className="opacity-50">
-            <strong>Disclaimer:</strong> For entertainment purposes. Results are based on astrological
-            calculations and personal interpretation. Not a substitute for professional advice.
-          </p>
+        <div className="text-center mt-5 small text-dim opacity-50">
+          <p>&copy; {currentYear} Cosmic Reading. All Lunar Cycles Reserved.</p>
         </div>
       </div>
     </footer>
   );
 }
+

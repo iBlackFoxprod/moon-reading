@@ -1,6 +1,5 @@
 /** Benefits Component
- * Displays 6 key benefits with icons, titles, and descriptions
- * SEO: Uses H2 for section title and H3 for each benefit
+ * Displays 6 key benefits with cosmic theme
  */
 
 'use client';
@@ -13,95 +12,74 @@ export default function Benefits() {
 
   const benefits = [
     {
-      icon: 'fa-head-side-virus',
-      title: 'Your Emotional Truth',
+      icon: 'fa-moon',
+      title: 'Emotional Truth',
       description:
-        'Understand your deepest emotions, what truly drives you, and why you react the way you do. Your moon sign is the key to emotional self-awareness.',
+        'Understand your deepest emotions, what truly drives you, and why you react the way you do.',
     },
     {
       icon: 'fa-heart',
-      title: 'Love & Relationship Insights',
+      title: 'Romantic Alignment',
       description:
-        'Learn what you need in relationships, your romantic style, and how to attract the right partner. Discover your relationship patterns and desires.',
+        'Learn what you need in relationships and how to attract the partner who truly resonates with your soul.',
     },
     {
       icon: 'fa-bullseye',
-      title: 'Life Purpose & Direction',
+      title: 'Life Purpose',
       description:
-        'Align with your true purpose. Your moon sign guides your subconscious motivations, helping you make better life decisions and find fulfillment.',
+        'Align with your true purpose. Your moon sign guides your subconscious motivations.',
     },
     {
-      icon: 'fa-lightbulb',
-      title: 'Hidden Personality Traits',
+      icon: 'fa-star',
+      title: 'Hidden Traits',
       description:
-        'Uncover 7+ hidden traits that make you unique. Your moon sign reveals sides of your personality you may never have considered before.',
+        'Uncover 7+ hidden traits that make you unique. Reveal sides of your personality you never knew.',
     },
     {
-      icon: 'fa-rocket',
-      title: 'Personal Growth Roadmap',
+      icon: 'fa-sparkles',
+      title: 'Growth Roadmap',
       description:
-        'Receive actionable insights to overcome challenges and embrace your true nature. A personalized guide to becoming your best self.',
+        'Receive actionable insights to overcome challenges and embrace your celestial nature.',
     },
     {
       icon: 'fa-gem',
-      title: 'Cosmic Compatibility',
+      title: 'Cosmic Fate',
       description:
-        'See how your moon sign meshes with others. Understand your compatibility with friends, family, and potential partners on a deeper level.',
+        'See how your moon sign meshes with others. Understand your compatibility with the universe.',
     },
   ];
 
   return (
-    <section id="benefits" className="py-5 bg-white">
-      <div className="container">
-        {/* Section Header */}
-        <h2 className="text-center mb-5 fw-bold text-dark">
-          What Will You Discover About Yourself?
+    <section id="benefits" className="py-5 position-relative">
+      <div className="container py-5">
+        <h2 className="text-center mb-5 display-4 fw-800 text-gradient glow">
+          Unlock Your Celestial Potential
         </h2>
 
-        {/* Benefits Grid */}
         <div className="row g-4 mb-5">
           {benefits.map((benefit, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-4">
-              <div className={`${styles.benefitCard} h-100 p-4 bg-white rounded-4`}>
-                {/* Icon Wrapper */}
-                <div className={`${styles.iconWrapper} mb-3 mx-auto`}>
+              <div className="glass-card h-100 p-4 text-center">
+                <div className="mb-4 text-accent fs-1">
                   <i className={`fas ${benefit.icon}`}></i>
                 </div>
-
-                {/* Benefit Title - H3 for SEO */}
-                <h3 className="fs-5 fw-bold mb-3 text-center">{benefit.title}</h3>
-
-                {/* Benefit Description */}
-                <p className="text-muted text-center small">{benefit.description}</p>
+                <h3 className="h5 fw-800 mb-3">{benefit.title}</h3>
+                <p className="text-dim small mb-0">{benefit.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Secondary CTA */}
-        <div className="text-center">
+        <div className="text-center mt-5">
           <Link
             href={affiliateLink}
-            className={`btn btn-lg fw-bold px-5 py-3 rounded-pill ${styles.ctaButton}`}
-            style={{
-              background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-              color: 'white',
-              border: 'none',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 10px 30px rgba(245, 87, 108, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 15px rgba(245, 87, 108, 0.2)';
-            }}
+            className="btn-cosmic text-decoration-none d-inline-block"
           >
-            Get Your Personalized Moon Sign Reading Today
+            Explore Your Benefits
           </Link>
         </div>
       </div>
     </section>
   );
 }
+

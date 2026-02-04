@@ -1,5 +1,5 @@
 /** Testimonials Component
- * Social proof section with customer testimonials and ratings
+ * Social proof section with cosmic theme
  */
 
 'use client';
@@ -9,25 +9,25 @@ import styles from './Testimonials.module.css';
 export default function Testimonials() {
   const testimonials = [
     {
-      text: 'I never understood why I was so emotional until I learned about my Pisces moon. This reading completely changed how I see myself. Finally, everything makes sense!',
+      text: 'I never understood why I was so emotional until I learned about my Pisces moon. This reading completely changed how I see myself.',
       author: 'Sarah M.',
       role: 'Verified Reader',
       rating: 5,
     },
     {
-      text: 'Eerily accurate. The insights about my relationship patterns and what I need in a partner were spot-on. I\'ve already recommended this to all my friends.',
+      text: 'Eerily accurate. The insights about my relationship patterns and what I need in a partner were spot-on.',
       author: 'Michael T.',
       role: 'Verified Reader',
       rating: 5,
     },
     {
-      text: 'As a therapist, I was skeptical, but this moon sign analysis gave me profound insights into my own psychology. I\'m now recommending it to my clients!',
+      text: 'As a professional, I was skeptical, but this moon sign analysis gave me profound insights into my own psychology.',
       author: 'Dr. Amanda L.',
       role: 'Verified Reader',
       rating: 5,
     },
     {
-      text: 'Best $27 I\'ve spent. The detailed breakdown of my emotional nature, career path, and love compatibility was incredibly helpful. Worth every penny!',
+      text: 'Best discovery this year. The detailed breakdown of my emotional nature was incredibly helpful and detailed.',
       author: 'Jessica R.',
       role: 'Verified Reader',
       rating: 5,
@@ -36,56 +36,42 @@ export default function Testimonials() {
 
   const renderStars = (rating: number) => {
     return Array.from({ length: rating }).map((_, i) => (
-      <i key={i} className="fas fa-star" style={{ color: '#ffc107', marginRight: '2px' }}></i>
+      <i key={i} className="fas fa-star text-accent me-1"></i>
     ));
   };
 
   return (
-    <section id="testimonials" className="py-5 bg-white">
-      <div className="container">
-        {/* Section Header */}
-        <h2 className="text-center mb-5 fw-bold text-dark">
-          See What Others Are Saying
+    <section id="testimonials" className="py-5 position-relative">
+      <div className="container py-5">
+        <h2 className="text-center mb-5 display-4 fw-800 text-gradient glow">
+          Voices from the Stars
         </h2>
 
-        {/* Testimonials Grid */}
         <div className="row g-4 mb-5">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-6">
-              <div className={`${styles.testimonialCard} p-4 h-100 rounded-4`}>
-                {/* Stars */}
+            <div key={index} className="col-12 col-md-6">
+              <div className="glass-card p-4 h-100">
                 <div className="mb-3">{renderStars(testimonial.rating)}</div>
-
-                {/* Testimonial Text */}
-                <p className={`${styles.testimonialText} mb-4`}>
-                  "{testimonial.text}"
-                </p>
-
-                {/* Author Info */}
+                <p className="text-dim italic mb-4">"{testimonial.text}"</p>
                 <div>
-                  <p className={`${styles.testimonialAuthor} fw-bold mb-1`}>
-                    {testimonial.author}
-                  </p>
-                  <p className="text-muted small mb-0">
-                    {testimonial.role}
-                  </p>
+                  <p className="fw-800 mb-0">{testimonial.author}</p>
+                  <p className="small text-primary mb-0">{testimonial.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Statistics Card */}
-        <div className={`${styles.statisticsCard} text-center p-5 rounded-4`}>
-          <h3 className="mb-3">
-            <i className="fas fa-star me-2"></i>
-            Join 50,000+ People Who've Discovered Their True Self
+        <div className="glass-card text-center p-5 mt-4">
+          <h3 className="h4 mb-3 text-gradient glow">
+            Join 50,000+ Seekers
           </h3>
-          <p className="fs-6 fw-bold" style={{ color: '#667eea' }}>
-            98% satisfaction rate • 4.9/5 average rating
+          <p className="fs-5 mb-0 text-dim">
+            <span className="text-accent">98.4%</span> Accuracy Rate as Rated by our Monthly Readers
           </p>
         </div>
       </div>
     </section>
   );
 }
+
