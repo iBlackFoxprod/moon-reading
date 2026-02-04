@@ -34,31 +34,24 @@ export default function Hero() {
               &quot;Your moon sign is the window to your soul. Most people only know half their story.&quot;
             </p>
 
-            <div className="glass-card p-4 p-md-5 mb-4">
-              <h3 className="h4 mb-4 text-center">Calculate Your Lunar Blueprint</h3>
-              <form onSubmit={handleReveal}>
-                <div className="row g-3">
-                  <div className="col-12">
-                    <label className="form-label small text-dim uppercase">Your Birth Date</label>
-                    <input type="date" className="form-control bg-dark text-white border-secondary py-3" required />
-                  </div>
-                  <div className="col-12 mt-4">
-                    <button
-                      type="submit"
-                      className="btn-cosmic w-100"
-                      disabled={isProcessing}
-                    >
-                      {isProcessing ? (
-                        <>
-                          <i className="fas fa-spinner fa-spin me-2"></i>
-                          Calculating Alignment...
-                        </>
-                      ) : 'Reveal My Moon Sign'}
-                    </button>
-                  </div>
-                </div>
-              </form>
-              <p className="mt-3 small text-center text-dim">
+            <div className="glass-card p-4 p-md-5 mb-4 text-center">
+              <h3 className="h4 mb-4">Discover Your Hidden Personality</h3>
+              <p className="text-dim mb-4">Find out what your lunar alignment reveals about your true nature and future path.</p>
+
+              <button
+                onClick={handleReveal}
+                className="btn-cosmic w-100 py-4 fs-4"
+                disabled={isProcessing}
+              >
+                {isProcessing ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin me-2"></i>
+                    Aligning Celestial Data...
+                  </>
+                ) : 'Get My Free Reading Now'}
+              </button>
+
+              <p className="mt-4 small text-dim">
                 <i className="fas fa-lock me-2 text-primary"></i>
                 100% Free & Secure Personal Analysis
               </p>
@@ -73,10 +66,10 @@ export default function Hero() {
           <div className="col-lg-6 text-center animate-float">
             <div className={styles.moonWrapper}>
               <Image
-                src="/moon.png"
-                alt="Glowing Moon"
-                width={600}
-                height={600}
+                src="/assets/MoonReadingDiscover.png"
+                alt="Moon Reading Discovery"
+                width={700}
+                height={700}
                 className="img-fluid"
                 priority
               />

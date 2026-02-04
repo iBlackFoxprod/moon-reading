@@ -6,9 +6,11 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Benefits from './components/Benefits';
+import TruthSection from './components/TruthSection';
 import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import WarningBlock from './components/WarningBlock';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 
@@ -24,6 +26,9 @@ export default function Page() {
       {/* Benefits Section - Highlights what users will gain */}
       <Benefits />
 
+      {/* Truth Section - Addresses common misconceptions or hard truths */}
+      <TruthSection />
+
       {/* How It Works Section - Simple 3-step process */}
       <HowItWorks />
 
@@ -32,6 +37,9 @@ export default function Page() {
 
       {/* FAQ Section - Addresses objections and common questions */}
       <FAQ />
+
+      {/* Warning Block - Important disclaimers or critical information */}
+      <WarningBlock />
 
       {/* Final CTA Section - High-urgency call-to-action */}
       <FinalCTA />

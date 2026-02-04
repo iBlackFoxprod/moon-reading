@@ -179,3 +179,25 @@ h1, h2, h3, .serif {
   border-radius: 4px;
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.9; }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.shadow-accent {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.uppercase { text-transform: uppercase; }
+.tracking-widest { letter-spacing: 0.2em; }
+.fw-800 { font-weight: 800; }
+.fs-large { font-size: 1.25rem; }
+.italic { font-style: italic; }
+
+.hover-accent:hover {
+  color: var(--accent-color) !important;
+}
