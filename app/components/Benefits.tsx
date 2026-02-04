@@ -5,7 +5,6 @@
 'use client';
 
 import Link from 'next/link';
-import styles from './Benefits.module.css';
 
 export default function Benefits() {
   const affiliateLink = 'https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net';

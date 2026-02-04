@@ -4,8 +4,6 @@
 
 'use client';
 
-import styles from './Testimonials.module.css';
-
 export default function Testimonials() {
   const testimonials = [
     {

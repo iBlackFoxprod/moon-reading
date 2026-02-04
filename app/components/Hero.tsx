@@ -4,7 +4,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 
@@ -12,8 +12,8 @@ export default function Hero() {
   const [isProcessing, setIsProcessing] = useState(false);
   const affiliateLink = 'https://d0313twnfeyj3ocrocv0mftg1u.hop.clickbank.net';
 
-  const handleReveal = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleReveal = (e?: React.SyntheticEvent) => {
+    if (e) e.preventDefault();
     setIsProcessing(true);
 
     // Antagonistic pre-sell: simulate calculation for credibility

@@ -5,7 +5,6 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './FAQ.module.css';
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
