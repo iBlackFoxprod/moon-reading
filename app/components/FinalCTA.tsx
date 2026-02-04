@@ -17,7 +17,7 @@ export default function FinalCTA() {
           The Stars Are <span className="text-secondary">Waiting.</span>
         </h2>
 
-        <p className="fs-5 text-dim mb-5 mx-auto" style={{ maxWidth: '750px' }}>
+        <p className="fs-5 text-dim mb-5 mx-auto readability-shadow" style={{ maxWidth: '750px' }}>
           Don&apos;t wait for the next lunar cycle. Your path is becoming clear today. Seize your cosmic blueprint and start your transformation.
         </p>
 

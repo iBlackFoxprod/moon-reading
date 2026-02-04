@@ -7,9 +7,10 @@
   --dark-bg: #050510;
   --card-bg: rgba(255, 255, 255, 0.03);
   --text-white: #ffffff;
-  --text-dim: rgba(255, 255, 255, 0.7);
+  --text-dim: #ffffff;
   --font-main: 'Outfit', sans-serif;
   --font-serif: 'Playfair Display', serif;
+  --text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -163,6 +164,10 @@ h1, h2, h3, .serif {
 
 .glow {
   text-shadow: 0 0 20px rgba(157, 141, 241, 0.5);
+}
+
+.readability-shadow {
+  text-shadow: var(--text-shadow);
 }
 
 /* Custom Scrollbar */

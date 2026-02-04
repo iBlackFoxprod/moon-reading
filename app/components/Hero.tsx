@@ -30,13 +30,13 @@ export default function Hero() {
             <h1 className="display-2 fw-800 text-gradient glow mb-4">
               Your Future is Written in the <span className="text-accent">Stars</span>
             </h1>
-            <p className="fs-5 text-dim mb-5 serif italic" style={{ borderLeft: '4px solid var(--primary-color)', paddingLeft: '20px' }}>
+            <p className="fs-5 text-dim mb-5 serif italic readability-shadow" style={{ borderLeft: '4px solid var(--primary-color)', paddingLeft: '20px' }}>
               &quot;Your moon sign is the window to your soul. Most people only know half their story.&quot;
             </p>
 
             <div className="glass-card p-4 p-md-5 mb-4 text-center">
               <h3 className="h4 mb-4">Discover Your Hidden Personality</h3>
-              <p className="text-dim mb-4">Find out what your lunar alignment reveals about your true nature and future path.</p>
+              <p className="text-dim mb-4 readability-shadow">Find out what your lunar alignment reveals about your true nature and future path.</p>
 
               <button
                 onClick={handleReveal}
