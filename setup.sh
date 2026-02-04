@@ -1,4 +1,5 @@
-#!/bin/bash
+Command "npm run build" exited with 1#!/bin/bash
+
 # Quick setup script for Moon Reading landing page
 
 echo "🌙 Moon Reading Landing Page - Setup"
