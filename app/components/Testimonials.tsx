@@ -52,7 +52,7 @@ export default function Testimonials() {
             <div key={index} className="col-12 col-md-6">
               <div className="glass-card p-4 h-100">
                 <div className="mb-3">{renderStars(testimonial.rating)}</div>
-                <p className="text-dim italic mb-4">"{testimonial.text}"</p>
+                <p className="text-dim italic mb-4">&quot;{testimonial.text}&quot;</p>
                 <div>
                   <p className="fw-800 mb-0">{testimonial.author}</p>
                   <p className="small text-primary mb-0">{testimonial.role}</p>

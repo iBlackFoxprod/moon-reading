@@ -30,7 +30,7 @@ export default function FinalCTA() {
         </h2>
 
         <p className="fs-5 text-dim mb-5 mx-auto" style={{ maxWidth: '700px' }}>
-          The stars have alignment for you. Don't let another lunar cycle pass without understanding your true emotional blueprint.
+          The stars have alignment for you. Don&apos;t let another lunar cycle pass without understanding your true emotional blueprint.
         </p>
 
         <div className="mb-5">

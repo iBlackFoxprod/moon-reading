@@ -31,7 +31,7 @@ export default function Hero() {
               Your Future is Written in the <span className="text-accent">Stars</span>
             </h1>
             <p className="fs-5 text-dim mb-5 serif italic" style={{ borderLeft: '4px solid var(--primary-color)', paddingLeft: '20px' }}>
-              "Your moon sign is the window to your soul. Most people only know half their story."
+              &quot;Your moon sign is the window to your soul. Most people only know half their story.&quot;
             </p>
 
             <div className="glass-card p-4 p-md-5 mb-4">
